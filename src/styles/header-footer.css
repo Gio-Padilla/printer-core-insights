@@ -1,0 +1,124 @@
+/* ----------------------------- Header CSS ----------------------------- */
+
+header {
+  padding: 0.5rem;
+  background-color: var(--primary-color-1);
+  text-align: center;
+  background-image: repeating-linear-gradient(transparent, var(--secondary-color-1));
+}
+
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ----------------------------- Header Logo CSS ----------------------------- */
+
+.header-logo {
+  /* ----- Image Menu ----- */
+  img {
+    width: 10em;
+    height: auto;
+  }
+}
+
+/* ----------------------------- Header Menu CSS ----------------------------- */
+.header-menu {
+  /* ----- Nav Menu ----- */
+  text-align: center;
+  nav {
+    min-width: fit-content;
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 1rem 2rem;
+      font-size: 1.2em;
+      color: var(--secondary-color-2);
+      cursor: pointer;
+      border-radius: 0.5rem;
+      background-color: var(--primary-color-1);
+      background-image: repeating-linear-gradient(var(--primary-color-2), transparent, var(--primary-color-2));
+    }
+
+    a:hover {
+      background-image: none;
+      background-color: var(--primary-color-2);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* ----- Button Menu ----- */
+  button {
+    display: none;
+    justify-self: center;
+    font-size: 3em;
+    margin: 0.3rem;
+    margin-top: -2.5rem;
+    background-color: transparent;
+    border: none;
+    padding: 0 1rem;
+    color: var(--primary-color-2);
+
+    &::before {
+      content: "≡";
+    }
+
+    &.open::before {
+      content: "X";
+      color: var(--accent-color-1);
+    }
+  }
+}
+
+/* ----------------------------- Smaller CSS without button ----------------------------- */
+@media screen and (max-width: 50em) {
+    .main-header {
+      flex-direction: column;
+    }
+}
+
+/* ----------------------------- Smaller CSS with button ----------------------------- */
+@media screen and (max-width: 40em) {
+    .header-menu {
+      width: 100%;
+      nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      nav.open {
+        max-height: 50rem;
+        overflow: hidden;
+      }
+      ul {
+        flex-direction: column;
+        justify-self: stretch;
+        a {
+          width: 100%;
+        }
+      }
+      button {
+        display: block;
+      }
+    }
+}
+
+/* ----------------------------- Footer CSS ----------------------------- */
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background-color: var(--primary-color-1);
+  text-align: center;
+  background-image: repeating-linear-gradient(transparent, var(--secondary-color-1));
+}
