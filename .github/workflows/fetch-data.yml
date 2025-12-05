@@ -2,29 +2,37 @@ name: Fetch Thangs 3D Models
 
 on:
   schedule:
-    - cron: "0 */12 * * *"   # every 12 hours
-  workflow_dispatch:         # manual run
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # ensures push is allowed
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Fetch Thangs data (POST request)
+      - name: Fetch Thangs data
         run: |
           mkdir -p src/data
           curl -sS -X POST "https://thangs.com/api/models/search" \
             -H "Content-Type: application/json" \
-            -d '{"query": "3d printer"}' \
+            -d '{"query":"3d printer"}' \
             -o src/data/thangs.json
 
-      - name: Commit & push updated JSON
+      - name: Commit & push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
+          
           git add src/data/thangs.json
-          git commit -m "Update Thangs data" || echo "No changes to commit"
-          git push
+          
+          if git commit -m "Update Thangs data"; then
+            git push
+          else
+            echo "No changes to commit"
+          fi
