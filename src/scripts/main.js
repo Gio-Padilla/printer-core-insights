@@ -1,9 +1,13 @@
 import { loadHeaderFooter } from "./utils.mjs";
+import { fetchThangsJSON } from "./ExternalServices.mjs";
 
+
+
+displayModels();
 loadHeaderFooter();
 
-function displayCards() {
-  console.log("test"); // <-- you can use this to build cards
-}
 
-displayCards();
+async function displayModels() {
+  const models = await fetchThangsJSON();
+  console.log("Loaded Thangs models:", models);
+}
