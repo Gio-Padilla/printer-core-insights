@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import { fetchThangsJSON } from "./ExternalServices.mjs";
+import { fetchPrintablesData } from "./ExternalServices.mjs";
 
 
 
@@ -8,6 +8,6 @@ loadHeaderFooter();
 
 
 async function displayModels() {
-  const models = await fetchThangsJSON();
+  const models = await fetchPrintablesData();
   console.log("Loaded Thangs models:", models);
 }
