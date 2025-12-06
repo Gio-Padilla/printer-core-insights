@@ -78,3 +78,32 @@ a:hover, button:hover {
     }
   }
 }
+
+/* ----------------------------- page-section ----------------------------- */
+
+.page-section {
+  margin: 0.5rem;
+  border: 2px solid var(--primary-color-2);
+  box-shadow: 0 0 1rem var(--primary-color-2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--secondary-color-2);
+
+  h2 {
+    background-color: var(--primary-color-2);
+    padding: 0.5rem;
+    color: var(--secondary-color-2);
+  }
+
+  p {
+    padding: 0.5rem;
+  }
+}
+
+/* Dictionary term styling */
+.dictionary-term {
+  cursor: help;
+  color: var(--primary-color-2);
+  border-bottom: 2px solid var(--accent-color-1);
+  padding: 0 1px;
+}
