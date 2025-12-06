@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'src/index.html'),
+          parts: resolve(__dirname, 'src/parts/index.html'),
         },
       },
     },

@@ -100,10 +100,85 @@ a:hover, button:hover {
   }
 }
 
-/* Dictionary term styling */
+/* ----------------------------- Dictionary term styling ----------------------------- */
 .dictionary-term {
   cursor: help;
   color: var(--primary-color-2);
   border-bottom: 2px solid var(--accent-color-1);
   padding: 0 1px;
+}
+
+/* ----------------------------- Cards ----------------------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, auto));;
+  gap: 1rem;
+  margin: 1rem;
+  justify-content: space-evenly;
+  .card {
+    border: 3px solid var(--primary-color-2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem var(--primary-color-2);
+    padding: 0.5rem;
+    max-width: 300px;
+    img {
+      display: block;
+      border: 3px solid var(--primary-color-2);
+      border-radius: 1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.04); /* 4% larger */
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 20em) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+}
+
+/* ----------------------------- Cards Buttons ----------------------------- */
+
+.card-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color-2);
+    color: var(--accent-color-2);
+    background-image: linear-gradient(var(--secondary-color-1), transparent, transparent, var(--secondary-color-1));
+    cursor: pointer;
+    border: 0;
+  }
+}
+
+/* ----------------------------- Alert Message Prompt ----------------------------- */
+
+.center-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  z-index: 9999;
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.center-alert.visible {
+  opacity: 1;
 }

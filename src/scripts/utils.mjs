@@ -6,7 +6,6 @@ export function getLocalStorage(key) {
 // save data to local storage
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
-  updateCartNotification();
 }
 // Return template based off of path location
 export async function loadTemplate(path) {
@@ -30,6 +29,7 @@ export async function loadHeaderFooter() {
   renderWithTemplate(footerTemplate, footerElement);
 
 	menuEvent();
+	updatePageTitle()
 
 	// Get the current year
 	const currentYear = new Date().getFullYear();
@@ -42,6 +42,17 @@ export async function loadHeaderFooter() {
 	document.getElementById("lastModified").textContent = `Last Updated: ${lastModified}`;
 }
 
+export function updatePageTitle() {
+	const pageTitleElement = document.querySelector('.header-location h1');
+	const path = window.location.pathname;
+
+	if (path.includes('/parts/')) {
+		pageTitleElement.textContent = "FDM Parts";
+	} else {
+		pageTitleElement.textContent = "Home";
+	}
+}
+
 export function menuEvent() {
 	// responsive navigation
 	const menuToggle = document.querySelector(".header-menu button");
@@ -51,4 +62,30 @@ export function menuEvent() {
 		navMenu.classList.toggle("open");
 		menuToggle.classList.toggle("open");
 	});
+}
+
+export function showAlert(message, durationSeconds = 1) {
+  // Create the alert container
+  const alert = document.createElement("div");
+  alert.classList.add("center-alert");
+  alert.textContent = message;
+
+  // Add to DOM
+  document.body.appendChild(alert);
+
+  // Trigger fade-in
+  requestAnimationFrame(() => {
+    alert.classList.add("visible");
+  });
+
+  // Remove after duration
+  setTimeout(() => {
+    alert.classList.remove("visible");
+
+    // Remove from DOM after fade-out
+    alert.addEventListener("transitionend", () => {
+      alert.remove();
+    }, { once: true });
+
+  }, durationSeconds * 1000);
 }
