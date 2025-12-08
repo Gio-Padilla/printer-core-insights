@@ -4,7 +4,7 @@ export default class ExternalServices {
   async getRedditTopPosts(
     subreddit = "3dprint",
     limit = 10,
-    timeframe = "week",
+    timeframe = "month",
     includeNSFW = false  // default = SFW mode
   ) {
     const url = `https://www.reddit.com/r/${subreddit}/top.json?t=${timeframe}&limit=${limit}`;
@@ -19,7 +19,6 @@ export default class ExternalServices {
 
           const isNSFW = p.over_18 === true;
 
-          // ❌ Skip any NSFW post when includeNSFW is false
           if (isNSFW && !includeNSFW) return null;
 
           let imageUrl = this.extractImage(p);
@@ -32,10 +31,9 @@ export default class ExternalServices {
             image: imageUrl,
             score: p.score,
             author: p.author
-            // Notice: nsfw flag removed
           };
         })
-        .filter(post => post !== null); // remove nulls (skipped NSFW)
+        .filter(post => post !== null); // remove nulls
 
       return posts;
 

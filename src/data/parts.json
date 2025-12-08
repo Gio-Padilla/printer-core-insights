@@ -1,0 +1,52 @@
+[
+  {
+    "part": "Frame",
+    "description": "The frame provides the structural foundation for the 3D printer. It keeps all components stable and aligned during printing, which is crucial for maintaining accuracy and print quality. Frames can be made from metal, acrylic, or even wood depending on the printer design. A rigid frame reduces vibrations and improves layer consistency.",
+    "image": "frame.webp"
+  },
+  {
+    "part": "Print Bed",
+    "description": "The print bed is the surface on which the object is printed. It can be heated to help filament adhere and reduce warping. Some beds are coated with materials like PEI or glass for improved adhesion and smoother bottom surfaces. Proper leveling and preparation of the print bed are essential for successful first layers.",
+    "image": "print_bed.webp"
+  },
+  {
+    "part": "Extruder",
+    "description": "The extruder is responsible for feeding filament into the hotend. It controls the speed and amount of filament pushed through the nozzle, which directly affects print quality and flow. There are direct-drive and Bowden extruders, each offering different benefits in terms of retraction, speed, and compatibility with flexible filaments.",
+    "image": "extruder.webp"
+  },
+  {
+    "part": "Hotend",
+    "description": "The hotend heats and melts the filament so it can be deposited layer by layer. It determines the maximum temperature the printer can handle, which affects filament compatibility. High-quality hotends provide consistent temperatures to avoid under- or over-extrusion. Cooling systems often accompany hotends to prevent heat creep.",
+    "image": "hotend.webp"
+  },
+  {
+    "part": "Nozzle",
+    "description": "The nozzle is the tip of the hotend where molten filament is extruded onto the print bed. Nozzle diameters vary, commonly 0.4mm, affecting print resolution and speed. Smaller nozzles provide finer detail but slower prints, while larger nozzles allow faster deposition for bigger models. Nozzles must be regularly cleaned to prevent clogs.",
+    "image": "nozzle.webp"
+  },
+  {
+    "part": "Stepper Motors",
+    "description": "Stepper motors drive the motion of the printer along the X, Y, and Z axes, as well as the extruder. They allow precise control over movement, which is critical for accuracy. Stepper motors often work with belts, lead screws, or threaded rods to translate rotation into linear motion. Their performance directly affects print quality and layer alignment.",
+    "image": "stepper_motor.webp"
+  },
+  {
+    "part": "Belts and Pulleys",
+    "description": "Belts and pulleys are used to move the print head or bed along the X and Y axes. They allow smooth, fast, and precise movement. Tensioning belts properly is essential to prevent layer shifting or missed steps. High-quality belts reduce wear over time and maintain consistent performance.",
+    "image": "belts_pulleys.webp"
+  },
+  {
+    "part": "Z-Axis Lead Screw",
+    "description": "The Z-axis lead screw raises and lowers the print bed or nozzle along the vertical axis. It converts rotational motion from a stepper motor into precise vertical movement. Accurate Z-axis control ensures consistent layer height and overall dimensional accuracy. Some printers use dual lead screws for stability on larger machines.",
+    "image": "z_axis_lead_screw.webp"
+  },
+  {
+    "part": "Cooling Fan",
+    "description": "Cooling fans are used to solidify extruded filament quickly, improving overhang and bridging performance. Hotend fans also prevent heat creep that can cause filament jams. Proper cooling is essential for printing small details, reducing stringing, and improving surface finish. Adjustable fan speeds allow tuning for different filaments.",
+    "image": "cooling_fan.webp"
+  },
+  {
+    "part": "Filament",
+    "description": "Filament is the thermoplastic material used to build the 3D object. It is fed into the extruder, melted by the hotend, and deposited layer by layer to form the print. Proper storage and handling prevent moisture absorption and printing issues.",
+    "image": "filament.webp"
+  }
+]

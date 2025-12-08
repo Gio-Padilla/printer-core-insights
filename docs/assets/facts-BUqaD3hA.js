@@ -1,0 +1,1 @@
+import{l as e}from"./utils-CNJeJr7Z.js";import{D as n}from"./diplayCards-DTboEbyu.js";e();r();function r(){const t=new n;t.displayParts();const s=document.querySelector(".card-buttons .parts-btn"),a=document.querySelector(".card-buttons .filaments-btn");s.addEventListener("click",()=>t.displayParts()),a.addEventListener("click",()=>t.displayFilaments())}

@@ -1,0 +1,37 @@
+[
+  {
+    "part": "PLA",
+    "description": "PLA (Polylactic Acid) is one of the most common and beginner-friendly 3D printing filaments. It prints at relatively low temperatures, produces minimal warping, and gives smooth surface finishes. PLA is biodegradable and available in many colors and blends. While easy to use, it is not ideal for high-temperature or heavy-stress applications due to its lower heat resistance.",
+    "image": "pla.webp"
+  },
+  {
+    "part": "ABS",
+    "description": "ABS (Acrylonitrile Butadiene Styrene) is known for its strength, durability, and heat resistance. It requires a heated bed and often an enclosure to prevent warping. ABS is more challenging to print than PLA but is excellent for functional prototypes and mechanical parts. It can be post-processed easily with sanding and acetone smoothing.",
+    "image": "abs.webp"
+  },
+  {
+    "part": "PETG",
+    "description": "PETG (Polyethylene Terephthalate Glycol) is a strong, flexible, and chemical-resistant filament. It offers a balance between PLA’s ease of printing and ABS’s durability. PETG has excellent layer adhesion and minimal warping, making it ideal for functional parts. It is slightly stringy compared to other filaments and benefits from good cooling tuning.",
+    "image": "petg.webp"
+  },
+  {
+    "part": "TPU",
+    "description": "TPU (Thermoplastic Polyurethane) is a flexible and rubber-like filament commonly used for phone cases, gaskets, vibration dampeners, and wearable items. It requires slower print speeds due to its elasticity. TPU prints best with direct-drive extruders and benefits from careful tuning to prevent kinking or under-extrusion.",
+    "image": "tpu.webp"
+  },
+  {
+    "part": "Nylon",
+    "description": "Nylon is a strong, durable, and impact-resistant filament known for its high wear resistance. It is ideal for gears, mechanical components, and functional prototypes. Nylon absorbs moisture quickly and must be kept dry in storage or during printing. It typically requires higher temperatures and an enclosure for best results.",
+    "image": "nylon.webp"
+  },
+  {
+    "part": "PVA",
+    "description": "PVA (Polyvinyl Alcohol) is a water-soluble filament commonly used as a support material for dual-extrusion printers. It dissolves when submerged in water, allowing for complex geometries and internal cavities. PVA must be stored in a dry environment and prints best at moderate temperatures with PLA.",
+    "image": "pva.webp"
+  },
+  {
+    "part": "HIPS",
+    "description": "HIPS (High Impact Polystyrene) is a lightweight, stable filament often used as a dissolvable support material for ABS prints, as it dissolves in limonene. On its own, HIPS is strong and easy to sand, making it useful for models, props, and lightweight functional parts. It requires ABS-like printing conditions.",
+    "image": "hips.webp"
+  }
+]

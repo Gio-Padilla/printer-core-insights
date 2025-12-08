@@ -12,8 +12,7 @@ function displayCardEvents() {
 
   const savedButton = document.querySelector(".card-buttons .saved");
   const button10 = document.querySelector(".card-buttons .top-10");
-
-  // ❗ Pass the functions, do NOT call them
+  
   savedButton.addEventListener("click", () => displayCards.displaySavedCards());
   button10.addEventListener("click", () => displayCards.displayTop10Cards());
 }

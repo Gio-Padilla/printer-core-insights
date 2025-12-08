@@ -133,6 +133,17 @@ a:hover, button:hover {
         transform: scale(1.04); /* 4% larger */
       }
     }
+    .remove-btn {
+      margin-top: 0.2rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: var(--primary-color-2);
+      color: var(--accent-color-1);
+      background-image: linear-gradient(var(--secondary-color-1), transparent, transparent, var(--secondary-color-1));
+      cursor: pointer;
+      border: 0;
+      width: 100%;
+    }
   }
 }
 
@@ -160,6 +171,10 @@ a:hover, button:hover {
   }
 }
 
+.top-1rem {
+  margin-top: 1rem;
+}
+
 /* ----------------------------- Alert Message Prompt ----------------------------- */
 
 .center-alert {
@@ -181,4 +196,105 @@ a:hover, button:hover {
 
 .center-alert.visible {
   opacity: 1;
+}
+
+/* ----------------------------- Form ----------------------------- */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: 1rem;
+  border: 3px solid var(--primary-color-2);
+  margin: 1rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem var(--primary-color-2);
+  background-color: var(--secondary-color-1);
+  background-image: repeating-linear-gradient(transparent, var(--secondary-color-2));
+
+  input, textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color-1);
+
+    &:valid {
+      border-left: 4px solid var(--accent-color-2);
+    }
+  }
+
+  textarea {
+    max-width: 100%;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: var(--primary-color-2);
+    color: var(--secondary-color-2);
+    background-image: repeating-linear-gradient(transparent, var(--primary-color-1));
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-image: none;
+    }
+  }
+}
+
+/* ----------------------------- Button Effect Animation ----------------------------- */
+/* I had to look up a good way to do this. */
+
+.glow-btn {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0; 
+}
+
+/* The Boarder */
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: -10%;
+  bottom: -10%;
+  border-radius: inherit;
+  background-image: repeating-linear-gradient(var(--accent-color-1), var(--accent-color-2));
+  animation: rotate 3s linear infinite;
+  z-index: -1;
+}
+
+/* Inner background to cover center */
+.glow-btn::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: #111;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ----------------------------- Viewer CSS ----------------------------- */
+
+#viewer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  height: 400px; /* or whatever height you want */
+  border: 3px solid var(--primary-color-1);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem var(--primary-color-1);
 }

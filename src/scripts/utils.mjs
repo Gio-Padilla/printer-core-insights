@@ -46,8 +46,10 @@ export function updatePageTitle() {
 	const pageTitleElement = document.querySelector('.header-location h1');
 	const path = window.location.pathname;
 
-	if (path.includes('/parts/')) {
-		pageTitleElement.textContent = "FDM Parts";
+	if (path.includes('/facts/')) {
+		pageTitleElement.textContent = "FDM Facts";
+	} else if (path.includes('/contact/')) {
+		pageTitleElement.textContent = "Contact Us";
 	} else {
 		pageTitleElement.textContent = "Home";
 	}
@@ -88,4 +90,21 @@ export function showAlert(message, durationSeconds = 1) {
     }, { once: true });
 
   }, durationSeconds * 1000);
+}
+
+export async function fetchJSON(path) {
+  try {
+    const response = await fetch(path);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${path}: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error("JSON fetch error:", error);
+    return null; // or return {} depending on your use case
+  }
 }

@@ -1,0 +1,17 @@
+import{g as u,s as h,a as p,f as g}from"./utils-CNJeJr7Z.js";class f{async getRedditTopPosts(e="3dprint",t=10,s="month",i=!1){const r=`https://www.reddit.com/r/${e}/top.json?t=${s}&limit=${t}`;try{return(await(await fetch(r)).json()).data.children.map(d=>{const a=d.data;if(a.over_18===!0&&!i)return null;let n=this.extractImage(a);return{id:a.id,fullname:a.name,title:a.title,url:"https://www.reddit.com"+a.permalink,image:n,score:a.score,author:a.author}}).filter(d=>d!==null)}catch(o){return console.error("Error loading Reddit posts:",o),[]}}extractImage(e){var t,s,i,r,o,l,m,d,a;if(e.is_gallery&&e.gallery_data&&e.media_metadata){const c=e.gallery_data.items[0],n=e.media_metadata[c.media_id];if((t=n==null?void 0:n.s)!=null&&t.u)return n.s.u.replace(/&amp;/g,"&")}return(o=(r=(i=(s=e.preview)==null?void 0:s.images)==null?void 0:i[0])==null?void 0:r.source)!=null&&o.url?e.preview.images[0].source.url.replace(/&amp;/g,"&"):((a=(d=(m=(l=e.preview)==null?void 0:l.images)==null?void 0:m[0])==null?void 0:d.resolutions)==null?void 0:a.length)>0?e.preview.images[0].resolutions.slice(-1)[0].url.replace(/&amp;/g,"&"):e.url_overridden_by_dest&&this.isLikelyImage(e.url_overridden_by_dest)?e.url_overridden_by_dest.replace(/&amp;/g,"&"):e.thumbnail&&this.isLikelyImage(e.thumbnail)?e.thumbnail.replace(/&amp;/g,"&"):"/images/noImage.webp"}isLikelyImage(e){return/\.(jpg|jpeg|png|gif|webp)$/i.test(e)}}class b{constructor(){this.mode=null}savePost(e){const t="saved-posts";let s=u(t)||[];s.some(i=>i.id===e.id)?p(`Already saved: ${e.title}`):(s.push(e),h(t,s),p(`Saved: ${e.title}`))}removePost(e){const t="saved-posts",i=(u(t)||[]).filter(r=>r.id!==e);h(t,i),p("Post removed"),this.mode==="saved"&&this.displaySavedCards()}async displayTop10Cards(){this.mode="top10";const t=await new f().getRedditTopPosts();this.renderCards(t)}displaySavedCards(){this.mode="saved";const e=u("saved-posts")||[];this.renderCards(e)}async displayParts(){this.mode="parts";const e=await g("/data/parts.json");this.renderCards(e)}async displayFilaments(){this.mode="filaments";const e=await g("/data/filament.json");this.renderCards(e)}renderCards(e,t=document.querySelector(".cards")){if(t.innerHTML="",!e.length){t.innerHTML="<p>No Data To Display</p>";return}e.forEach(s=>{t.appendChild(this.buildCard(s))})}buildCard(e){return this.mode==="parts"?this.buildPartsCard(e):this.mode==="filaments"?this.buildFilamentCard(e):this.buildRedditCard(e)}buildPartsCard(e){const t=document.createElement("div");return t.classList.add("card"),t.innerHTML=`
+      <h3>${e.part}</h3>
+      <img src="/images/parts/${e.image}" alt="${e.part}" width="300" loading="lazy">
+      <p>${e.description}</p>
+    `,t}buildFilamentCard(e){const t=document.createElement("div");return t.classList.add("card"),t.innerHTML=`
+      <h3>${e.part}</h3>
+      <img src="/images/filaments/${e.image}" alt="${e.part}" width="300" loading="lazy">
+      <p>${e.description}</p>
+    `,t}buildRedditCard(e){const t=document.createElement("div");t.classList.add("card");const s=this.mode==="saved";return t.innerHTML=`
+      <img src="${e.image}" alt="Image" width="300" loading="lazy">
+      <a href="${e.url}" target="_blank">${e.title}</a>
+      <div class="reddit-meta">
+        👍 ${e.score} • by ${e.author}
+      </div>
+
+      ${s?'<button class="remove-btn">Remove</button>':""}
+    `,t.querySelector("img").addEventListener("click",()=>{this.savePost(e)}),s&&t.querySelector(".remove-btn").addEventListener("click",()=>{this.removePost(e.id)}),t}}export{b as D};
