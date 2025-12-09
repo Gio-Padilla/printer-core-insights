@@ -1,0 +1,182 @@
+[
+  {
+    "term": "Extruder",
+    "description": "The extruder is the part of the 3D printer responsible for feeding the filament into the hotend. It controls the flow of filament to create precise layers in the print."
+  },
+  {
+    "term": "Hotend",
+    "description": "The hotend is the component that heats and melts the filament so it can be deposited onto the print bed. It determines the maximum temperature you can print at for different filament types."
+  },
+  {
+    "term": "Filament",
+    "description": "Filament is the thermoplastic material used by FDM printers to build objects layer by layer. Common types include PLA, ABS, PETG, and TPU, each with unique printing properties."
+  },
+  {
+    "term": "Slicer",
+    "description": "A slicer is software that converts 3D models into instructions the printer can understand, called G-code. It defines layer height, print speed, and support structures for successful printing."
+  },
+  {
+    "term": "Layer Height",
+    "description": "Layer height is the thickness of each layer the printer lays down. Smaller layer heights produce smoother prints but increase print time."
+  },
+  {
+    "term": "Print Bed",
+    "description": "The print bed is the surface on which the 3D object is printed. It can be heated to help with adhesion and reduce warping of the print."
+  },
+  {
+    "term": "Bed Leveling",
+    "description": "Bed leveling ensures the print bed is perfectly parallel to the nozzle. Proper leveling is essential for the first layer to adhere correctly and for overall print quality."
+  },
+  {
+    "term": "G-code",
+    "description": "G-code is a language that tells the printer how to move, extrude filament, and control temperature. Slicer software generates this code from your 3D model."
+  },
+  {
+    "term": "Infill",
+    "description": "Infill refers to the internal structure of a print, which can vary in density and pattern. Higher infill increases strength but also increases material usage and print time."
+  },
+  {
+    "term": "Perimeter",
+    "description": "The perimeter, or shell, is the outer wall of the printed object. It defines the visible surface and provides structural support for the infill."
+  },
+  {
+    "term": "Supports",
+    "description": "Supports are temporary structures printed to hold overhanging parts of a model. They are removed after printing to ensure complex geometries print successfully."
+  },
+  {
+    "term": "Raft",
+    "description": "A raft is a horizontal mesh of filament printed underneath the model. It helps with adhesion to the print bed and reduces warping for larger prints."
+  },
+  {
+    "term": "Brim",
+    "description": "A brim is a single-layer border printed around the base of the object. It increases surface area and helps with bed adhesion, especially for small or delicate prints."
+  },
+  {
+    "term": "Nozzle",
+    "description": "The nozzle is the tip of the hotend where the melted filament exits. Nozzle diameter affects layer resolution and print speed."
+  },
+  {
+    "term": "Retraction",
+    "description": "Retraction is when the printer pulls filament back slightly to prevent stringing between parts of the print. Proper retraction settings reduce oozing and improve print quality."
+  },
+  {
+    "term": "Stringing",
+    "description": "Stringing occurs when thin strands of filament are left between parts of a print. It usually happens when retraction settings are too low or temperatures are too high."
+  },
+  {
+    "term": "Warping",
+    "description": "Warping is the lifting or curling of the corners of a print during printing. It happens due to uneven cooling of the filament and can ruin the object if not prevented."
+  },
+  {
+    "term": "Overhang",
+    "description": "An overhang is any part of the model that extends outward without support underneath. Printing steep overhangs often requires supports or special slicer settings."
+  },
+  {
+    "term": "Bridging",
+    "description": "Bridging occurs when filament is extruded across a gap without support underneath. Proper cooling and speed settings help achieve clean bridges."
+  },
+  {
+    "term": "Calibration",
+    "description": "Calibration is the process of fine-tuning printer settings to ensure accurate prints. This includes steps like bed leveling, extruder calibration, and temperature adjustment."
+  },
+  {
+    "term": "Retraction Distance",
+    "description": "Retraction distance is how far the filament is pulled back during a retraction move. Too little causes stringing, and too much can clog the nozzle."
+  },
+  {
+    "term": "Print Speed",
+    "description": "Print speed is how fast the printer moves while extruding filament. Faster speeds reduce print time but can compromise detail and quality."
+  },
+  {
+    "term": "Temperature Tower",
+    "description": "A temperature tower is a test print with sections printed at different temperatures. It helps find the optimal printing temperature for a specific filament."
+  },
+  {
+    "term": "Cooling Fan",
+    "description": "The cooling fan helps solidify the filament quickly after extrusion. Proper cooling prevents warping, stringing, and poor layer adhesion."
+  },
+  {
+    "term": "Filament Diameter",
+    "description": "Filament diameter affects how much material is extruded. Common diameters are 1.75mm and 2.85mm, and accuracy is essential for consistent printing."
+  },
+  {
+    "term": "Z-Axis",
+    "description": "The Z-axis controls the vertical movement of the print head or bed. Layer height adjustments are applied along this axis."
+  },
+  {
+    "term": "X-Axis",
+    "description": "The X-axis controls horizontal movement from left to right. It is one of the axes used to navigate the print head across the bed."
+  },
+  {
+    "term": "Y-Axis",
+    "description": "The Y-axis controls horizontal movement from front to back. Together with the X and Z axes, it enables precise 3D printing motions."
+  },
+  {
+    "term": "Bed Adhesion",
+    "description": "Bed adhesion refers to how well the first layer sticks to the print bed. Techniques like using glue sticks, tape, or heated beds improve adhesion."
+  },
+  {
+    "term": "Filament Runout Sensor",
+    "description": "A filament runout sensor detects when filament runs out during a print. It can pause the printer, allowing you to reload filament and continue the print without failure."
+  },
+    {
+    "term": "3D Printer",
+    "description": "A machine that creates three-dimensional objects by adding material layer by layer. FDM 3D printers are one type that use thermoplastic filament."
+  },
+  {
+    "term": "Prototyping",
+    "description": "The process of creating a preliminary model or sample of a product. FDM printing is ideal for prototyping because it allows for rapid iteration."
+  },
+  {
+    "term": "Thermoplastic",
+    "description": "A type of plastic that becomes soft when heated and hardens upon cooling. Most FDM filaments, like PLA and ABS, are thermoplastics."
+  },
+  {
+    "term": "Precision",
+    "description": "The degree to which a 3D printer can accurately reproduce the details of a design. High precision is essential for creating detailed models or functional parts."
+  },
+  {
+    "term": "Maker",
+    "description": "A person who enjoys creating or building projects, often using tools like 3D printers, electronics, or CNC machines."
+  },
+  {
+    "term": "Engineering Principles",
+    "description": "Fundamental concepts from engineering, such as design, mechanics, and material properties, which are applied when using 3D printers."
+  },
+  {
+    "term": "Custom Parts",
+    "description": "Parts specifically designed for a particular purpose or project. FDM printing allows creating custom parts on demand."
+  },
+  {
+    "term": "Layer by Layer",
+    "description": "The process by which FDM printers build objects, adding material one layer at a time to create a complete 3D shape."
+  },
+  {
+    "term": "Creativity",
+    "description": "The ability to design and innovate, which 3D printing enables by allowing rapid prototyping and experimentation."
+  },
+  {
+    "term": "Accessible Tool",
+    "description": "A device or machine that is easy to use and available to a wide range of people. FDM 3D printers are considered accessible tools because they are relatively affordable and simple to operate."
+  },
+  {
+    "term": "Functional Component",
+    "description": "A part that can be used for practical purposes rather than just for display. FDM printers can create functional components with proper settings and materials."
+  },
+  {
+    "term": "Experimentation",
+    "description": "The act of trying out new designs, techniques, or ideas. 3D printing encourages experimentation by allowing rapid testing and iteration."
+  },
+  {
+    "term": "Three-Dimensional Object",
+    "description": "An object that has width, height, and depth, created by adding material layer by layer in 3D printing."
+  },
+  {
+    "term": "Rapid Iteration",
+    "description": "Quickly making changes and testing new designs. FDM printers enable rapid iteration by producing prototypes quickly and affordably."
+  },
+  {
+    "term": "Vibrant Colors",
+    "description": "Bright and varied filament colors that can be used in FDM printing. Multiple colors allow for more creative and visually appealing prints."
+  }
+]
